@@ -1,5 +1,9 @@
 {
   "dependencies": {
-    "@mapbox/polyline": "^1.2.1"
+    "@mapbox/polyline": "^1.2.1",
+    "chart.js": "^4.4.5",
+    "papaparse": "^5.4.1",
+    "react-chartjs-2": "^5.2.0",
+    "react-google-charts": "^5.1.0"
   }
 }

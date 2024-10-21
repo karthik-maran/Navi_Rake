@@ -20,6 +20,9 @@ import AdminViewUsers from './components/AdminViewUsers';
 import AdminShowData from './Pages/AdminShowData';
 import AdminViewBookings from './components/AdminViewBooking';
 import AdminViewData from './Pages/AdminViewData';
+import About from './components/About';
+import GoogleChartGraph from './components/CoalDashbordAPI';
+import CoalDashboardAPI from './components/CoalDashbordAPI';
 
 
 const Home = () => {
@@ -33,12 +36,15 @@ const Home = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/Home" element={<HomePage/>}/>
         <Route path="/register" element={<Registration />} />
+        <Route path="/about" element={<About/>}/>
         <Route path="/booking" element={<BookingForm />} />
-        <Route path="/forecasting" element={<SidingLocation/>}/>
+        <Route path="/siding-locator" element={<SidingLocation/>}/>
         <Route path="/HomePage" element={<ProtectedRoute><HomePage/></ProtectedRoute>}/>
         <Route path="/rake-cards" element={<RakeDetails />} />
         <Route path="/report-data" element={<ReportGeneration />} /> 
         <Route path="/scheduling" element={<Shortestpathmap/>} />
+        <Route path='/forecasting' element={<CoalDashboardAPI/>}/>
+        
 
       
         <Route path="/admin" element={<AdminDBPage/>} />

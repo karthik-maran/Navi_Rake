@@ -58,7 +58,7 @@ const NavBar = () => {
         <div className="navbar-links">
           <a className="navbar-link" href="/Home">Home</a>
           <a className="navbar-link" href="/about">About</a>
-          <a className="navbar-link" href="/getstarted">Get Started</a>
+          <a className="navbar-link" href="/siding-locator">Siding Locator</a>
           <a className="navbar-link" href="/support">Support</a>
 
           {/* Display user dropdown if logged in */}
