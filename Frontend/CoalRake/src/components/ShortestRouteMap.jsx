@@ -31,7 +31,8 @@ const ShortestRouteMap = () => {
     }, []);
 
     return (
-        <MapContainer center={startCoords} zoom={13} style={{ height: '600px', width: '60%' }}>
+        
+        <MapContainer center={startCoords} zoom={13} style={{ height: '600px', width: '60%',border:"solid",margin:'30px' }}>
             <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

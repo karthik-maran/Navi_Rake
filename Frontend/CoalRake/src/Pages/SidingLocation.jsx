@@ -28,7 +28,7 @@ const SidingLocator = () => {
 
   return (
     
-    <div style={{ display: 'flex' ,gap:'0px',flexDirection: 'row', height: '650px'}}>
+    <div style={{ display: 'flex' ,gap:'10px',flexDirection: 'row', height: '650px'}}>
       {/* Siding Map component */}
       <SidingMap sidingData={sidingData} handleMarkerClick={handleMarkerClick} />
 

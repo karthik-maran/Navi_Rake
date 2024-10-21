@@ -14,7 +14,7 @@ const Shortestpathmap = () => {
         height: "100vh",  // Takes the full viewport height
         padding: "20px"  // Adds padding for a better layout
       }}
-    >
+    > 
       
       <ShortestRouteMap />
       <VerticalProgressBar />

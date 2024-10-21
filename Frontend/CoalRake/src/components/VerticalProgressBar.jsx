@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import '../Styles/VerticalProgressBar.css'; // Use external CSS for cleaner styling
 
 const VerticalProgressBar = () => {
   const [stations, setStations] = useState({ start: "", end: "" });
-  const [progress, setProgress] = useState(0); // Assuming progress is a percentage (0-100)
+  const [progress, setProgress] = useState(0); // Progress as a percentage (0-100)
 
   useEffect(() => {
     const fetchStations = async () => {
-      // Simulate fetching data (replace this with your actual fetch logic)
-      // For example, using axios to fetch from an API endpoint
       try {
         // Uncomment the line below to fetch from your API
         // const response = await axios.get('/api/stations');
@@ -17,8 +16,8 @@ const VerticalProgressBar = () => {
         const response = { data: { start: "Station A", end: "Station B" } };
         setStations(response.data);
         
-        // Mock progress value
-        setProgress(80); // Set this value dynamically as needed
+        // Mock progress value (set this dynamically in real app)
+        setProgress(80); // For example, 80% progress
       } catch (error) {
         console.error("Error fetching stations:", error);
       }
@@ -27,32 +26,24 @@ const VerticalProgressBar = () => {
     fetchStations();
   }, []);
 
+  // Determine the number of steps and current step based on progress
+  const steps = 4; // Total number of steps
+  const currentStep = Math.floor((progress / 100) * steps);
+
   return (
-    <div style={{ width: "200px", padding: "10px" ,marginLeft:"100px"}}>
-      <h3 style={{ textAlign: "center" }}>{stations.start} </h3>
-      <div style={{
-        position: "relative",
-        height: "500px",
-        width:"50px" ,// Height of the progress bar
-        background: "#e0e0e0",
-        borderRadius: "10px",
-        overflow: "hidden",
-      }}>
-        <div
-          style={{
-            position: "absolute",
-            bottom: 0,
-            left: 0,
-            height: `${progress}%`, // Use progress state
-            width: "100%",
-            background: "#76c7c0",
-            transition: "height 0.5s ease", // Smooth transition
-          }}
-        ></div>
+    <div className="progress-container">
+      <h3 className="station-label">{stations.start}</h3>
+      <div className="progress-bar">
+        {[...Array(steps)].map((_, index) => (
+          <div key={index} className={`step ${index <= currentStep ? 'completed' : ''}`}>
+            <div className="circle">
+              {index <= currentStep ? <span>&#10003;</span> : ''}
+            </div>
+            {index < steps - 1 && <div className={`line ${index < currentStep ? 'completed' : ''}`}></div>}
+          </div>
+        ))}
       </div>
-      <div style={{ textAlign: "center", marginTop: "10px" }}>
-        <span>{stations.end}</span>
-      </div>
+      <h3 className="station-label">{stations.end}</h3>
     </div>
   );
 };

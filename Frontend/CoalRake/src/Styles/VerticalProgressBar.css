@@ -1,36 +1,62 @@
-.vertical-progress-bar-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .vertical-progress-bar-label-container {
-    display: flex;
-    justify-content: space-between;
-    width: 40px;
-    margin-bottom: 10px;
-  }
-  
-  .vertical-progress-bar-start-label,
-  .vertical-progress-bar-end-label {
-    font-size: 12px;
-    color: #333;
-  }
-  
-  .vertical-progress-bar-bar {
-    width: 20px;
-    height: 200px;
-    background-color: #e0e0e0;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .vertical-progress-bar-progress {
-    width: 100%;
-    background-color: #76c7c0;
-    border-radius: 10px;
-    position: absolute;
-    bottom: 0;
-  }
-  
+/* VerticalProgressBar.css */
+
+.progress-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 100px;
+  width: 150px;
+}
+
+.station-label {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.progress-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 50px;
+  height: 400px; /* Adjust based on your layout */
+  background: #e0e0e0;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: white;
+  transition: background 0.5s ease;
+}
+
+.completed .circle {
+  background-color: #76c7c0; /* Completed step color */
+}
+
+.line {
+  width: 2px;
+  height: 60px; /* Adjust based on the gap between steps */
+  background-color: #e0e0e0;
+  transition: background-color 0.5s ease;
+}
+
+.completed .line {
+  background-color: #76c7c0; /* Completed line color */
+}

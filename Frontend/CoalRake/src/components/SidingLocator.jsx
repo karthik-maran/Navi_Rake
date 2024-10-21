@@ -15,7 +15,7 @@ const SidingMap = ({ sidingData, handleMarkerClick }) => {
         center={[0.5, 79.0]} // Centered on India
         zoom={5}
         scrollWheelZoom={true}
-        style={{ height: '100%', width: '100%' }}
+        style={{ height: '100%', width: '100%',margin:"30px",border:"solid" }}
         maxBounds={indiaBounds} // Restrict panning outside India
         maxBoundsViscosity={1.0} // How "sticky" the bounds are
         minZoom={5} // Set minimum zoom level
