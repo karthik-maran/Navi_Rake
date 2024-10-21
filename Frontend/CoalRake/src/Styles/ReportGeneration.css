@@ -1,0 +1,61 @@
+/* Styles/ReportGeneration.css */
+
+.report-generation-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .user-info, .bookings {
+    margin-bottom: 20px;
+  }
+  
+  .user-info p, .booking-item p {
+    margin: 5px 0;
+  }
+  
+  .booking-item {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+  }
+  
+  .booking-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .error {
+    color: #ff0000;
+    text-align: center;
+  }
+  
+  .success {
+    color: #28a745;
+    text-align: center;
+  }
+  

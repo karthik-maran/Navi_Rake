@@ -1,0 +1,97 @@
+/* Container for the entire login page */
+
+.unique-login-container {
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1524678606370-e7177f4f2a11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGJhY2tncm91bmQlMjBpbWFnZXxlbnwwfHx8fDE2OTI1OTI0Mjg&ixlib=rb-1.2.1&q=80&w=1080'); /* Replace this with your preferred image URL */
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Card that contains the login form */
+.unique-login-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Login title */
+.unique-login-title {
+  font-family: 'Arial', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Form styles */
+.unique-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Individual form group styling */
+.unique-form-group label {
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.unique-form-group input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.unique-form-group input:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 8px rgba(74, 144, 226, 0.2);
+}
+
+/* Button styling */
+.unique-login-button {
+  padding: 30px;
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.unique-login-button:hover {
+  background-color: #357abd;
+}
+
+/* Error and success messages */
+.unique-error-message {
+  color: red;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.unique-success-message {
+  color: green;
+  margin-bottom: 15px;
+  font-size: 14px;
+}

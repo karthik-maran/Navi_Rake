@@ -1,0 +1,129 @@
+/* Global font and style setup */
+@font-face {
+    font-family: 'Ambit';
+    src: url('/fonts/Ambit/Ambit-Regular.woff2') format('woff2'),
+         url('/fonts/Ambit/Ambit-Regular.woff') format('woff'),
+         url('/fonts/Ambit/Ambit-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Ensures text is visible with fallback font while loading */
+  }
+  
+  /* Navbar container */
+  .navbar-container {
+    font-family: 'Ambit', sans-serif;
+    box-sizing: border-box; /* Ensures padding and borders are calculated */
+    width: 100%; 
+    background-color:rgb(0, 0, 0);/* Ensure it takes full width */
+  }
+  
+  /* Navbar content layout */
+  .navbar-content {
+    margin: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.25rem;
+    padding: 2rem 0;
+  }
+  
+  /* Navbar links hidden on mobile */
+  .navbar-links {
+    display: none;
+    gap: 3.5rem;
+    align-items: start;
+  }
+  
+  /* Left content */
+  .navbar-left {
+    flex-grow: 1;
+  }
+  
+  /* Navbar link styles */
+  .navbar-link {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .navbar-link:hover {
+    color: #d0420e; /* Hover effect with blue color */
+  }
+  
+  /* User name color */
+  .navbar-user {
+    color: #d0420e; /* Highlight the username */
+  }
+  
+  /* Mobile toggle button */
+  .navbar-toggle {
+    cursor: pointer;
+  }
+  
+  /* Mobile navbar links */
+  .navbar-mobile-links {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    font-size: 1.125rem;
+  }
+  
+  .navbar-mobile-link,
+  .navbar-mobile-user {
+    margin: 2rem;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .navbar-mobile-link:hover,
+  .navbar-mobile-user:hover {
+    color: #1d4ed8; /* Hover effect for mobile links */
+  }
+  
+  /* Larger screen styles */
+  @media (min-width: 1024px) {
+    .navbar-links {
+      display: flex;
+    }
+  
+    .navbar-toggle {
+      display: none; /* Hide toggle button on large screens */
+    }
+  
+    .navbar-mobile-links {
+      display: none; /* Hide mobile links on large screens */
+    }
+  }
+  /* Navbar.css */
+
+.navbar-user-container {
+  position: relative;
+  z-index: 10;
+}
+
+.navbar-user-dropdown {
+  position: absolute;
+  right: 0;
+  top: 30px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.navbar-user-dropdown button {
+  background: none;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  color: #333;
+}
+
+.navbar-user-dropdown button:hover {
+  background-color: #f0f0f0;
+}

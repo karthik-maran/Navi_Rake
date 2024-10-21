@@ -1,0 +1,86 @@
+/* Registration.css */
+
+.register-container {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  padding: 20px;
+  align-self: flex-end;
+  
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 100%;
+  max-width: 450px; /* Max width to keep the form compact */
+  margin: auto; /* Center the form */
+}
+
+.register-container h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #333; /* Dark text color */
+  margin-bottom: 20px;
+
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #007bff; /* Blue border on focus */
+}
+
+.form-group textarea {
+  resize: none; /* Prevent resizing */
+  height: 80px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff; /* Primary button color */
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.error,
+.success {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.error {
+  color: #e74c3c; /* Red for errors */
+}
+
+.success {
+  color: #2ecc71; /* Green for success */
+}

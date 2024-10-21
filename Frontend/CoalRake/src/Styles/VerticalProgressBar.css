@@ -1,0 +1,36 @@
+.vertical-progress-bar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .vertical-progress-bar-label-container {
+    display: flex;
+    justify-content: space-between;
+    width: 40px;
+    margin-bottom: 10px;
+  }
+  
+  .vertical-progress-bar-start-label,
+  .vertical-progress-bar-end-label {
+    font-size: 12px;
+    color: #333;
+  }
+  
+  .vertical-progress-bar-bar {
+    width: 20px;
+    height: 200px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .vertical-progress-bar-progress {
+    width: 100%;
+    background-color: #76c7c0;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0;
+  }
+  

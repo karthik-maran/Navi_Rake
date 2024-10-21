@@ -1,0 +1,91 @@
+/* bookingform.css */
+
+/* Container styling */
+.booking-form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Heading styling */
+  .booking-form-container h2 {
+    text-align: center;
+    size: 80px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Error and success messages */
+  .error, .success {
+    color: #d9534f;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .success {
+    color: #5bc0de;
+  }
+  
+  /* Form group styling */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  /* Label styling */
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  /* Select and input styling */
+  .form-group select, .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  /* Button styling */
+  button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Optional: Responsive design for smaller screens */
+  @media (max-width: 600px) {
+    .form-group {
+      margin-bottom: 10px;
+    }
+  
+    .form-group label {
+      font-size: 14px;
+    }
+  
+    .form-group select, .form-group input {
+      font-size: 14px;
+      padding: 8px;
+    }
+  
+    button {
+      font-size: 14px;
+      padding: 8px;
+    }
+  }
+  

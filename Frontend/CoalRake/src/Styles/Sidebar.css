@@ -1,0 +1,65 @@
+.admin-dashboard-container {
+    display: flex;
+  }
+  
+  .sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #2c3e50;
+    padding: 20px;
+    color: white;
+    margin-left: auto;
+  }
+  
+  .sidebar h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin-bottom: 10px;
+  }
+  
+  .sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .sidebar ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .dashboard-content {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  
+  .collection-counts {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .count-box {
+    background-color: #ecf0f1;
+    margin: 10px;
+    padding: 20px;
+    flex: 1;
+    min-width: 250px;
+    border-radius: 10px;
+  }
+  
+  .count-box h2 {
+    margin-bottom: 10px;
+  }
+  
+  .count-box p {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  

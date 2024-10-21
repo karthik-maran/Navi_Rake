@@ -1,0 +1,47 @@
+/* rakecards.css */
+.rake-cards-container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .rake-cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+  
+  .rake-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+    width: 300px;
+    text-align: left;
+  }
+  
+  .rake-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .rake-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .rake-card-content {
+    padding: 16px;
+  }
+  
+  .rake-card-content h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+  }
+  
+  .rake-card-content p {
+    margin: 4px 0;
+  }
+  

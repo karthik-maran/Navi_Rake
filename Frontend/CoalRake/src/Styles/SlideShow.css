@@ -1,0 +1,79 @@
+/* ImageSlideshow.css */
+
+.slideshow-container {
+    position: relative;
+    z-index: 5;
+    width: 100%; /* Maximum width of the slideshow */
+    margin: auto;
+    height: 650px; /* Center the slideshow */
+    border: 0px solid #ccc; /* Light gray border */
+    overflow: hidden; /* Hide overflowing elements */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .slideshow-slide {
+    display: flex;
+    justify-content: center; /* Center the image */
+    align-items: center; /* Center the image */
+  }
+  
+  .slideshow-image {
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners */
+  }
+  
+  .slideshow-button {
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 50px; /* Center vertically */
+    transform: translateY(-50%); /* Center vertically */
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+    border: none; /* No border */
+    border-radius: 50%; /* Round button */
+    cursor: pointer; /* Pointer cursor on hover */
+    padding: 10px; /* Padding for button */
+    font-size: 24px; /* Font size for arrows */
+    z-index: 1; /* Bring button above other elements */
+  }
+  
+  .slideshow-button.prev {
+    left: 10px; /* Position to the left */
+  }
+  
+  .slideshow-button.next {
+    right: 10px; /* Position to the right */
+  }
+  
+  .slideshow-indicators {
+    text-align: center; /* Center indicators */
+    margin-top: 10px; /* Space above indicators */
+  }
+  
+  .indicator {
+    display: inline-block; /* Inline block for spacing */
+    width: 10px; /* Width of indicator */
+    height: 10px; /* Height of indicator */
+    margin: 0 5px; /* Space between indicators */
+    border-radius: 50%; /* Rounded indicators */
+    background-color: #ccc; /* Light gray color */
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  .indicator.active {
+    background-color: #007BFF; /* Blue color for active indicator */
+  }
+  
+  .slideshow-text {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Fine-tune centering */
+    color: white; /* Text color */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
