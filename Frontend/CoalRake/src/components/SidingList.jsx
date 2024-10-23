@@ -2,7 +2,7 @@ import React from 'react';
 
 const SidingList = ({ sidingData, selectedSiding }) => {
   return (
-    <div style={{ height:'100%',width: '50%', padding: '10px', overflowY: 'scroll',margin:'30px', border:'solid',height:'600px' }}>
+    <div style={{ height:'100%',width: '50%', padding: '10px', overflowY: 'scroll',margin:'30px', border:'solid' }}>
       {/* If a siding is selected, show its details, otherwise show all siding locations */}
       {!selectedSiding ? (
         <>

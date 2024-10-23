@@ -5,12 +5,14 @@
   flex-direction: column;
   align-items: center;
   margin-left: 100px;
-  width: 150px;
+  width: 0px;
 }
 
 .station-label {
+  position: relative;
   text-align: center;
   margin: 10px 0;
+  margin-top: 10px;
 }
 
 .progress-bar {
@@ -20,7 +22,7 @@
   justify-content: flex-start;
   width: 50px;
   height: 400px; /* Adjust based on your layout */
-  background: #e0e0e0;
+
   border-radius: 10px;
   padding: 10px;
 }

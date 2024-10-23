@@ -57,6 +57,7 @@ const Login = () => {
         setError('');
         alert('Login successful');
         navigate('/home');
+        window.location.reload()
       } else {
         setError(response.data.message || 'Login failed. Please try again.');
         setSuccess('');

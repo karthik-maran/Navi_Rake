@@ -4,6 +4,8 @@ import VerticalProgressBar from "../components/VerticalProgressBar";
 
 const Shortestpathmap = () => {
   return (
+
+
     <div 
       className="dashboard-content" 
       style={{

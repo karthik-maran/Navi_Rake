@@ -1,61 +1,97 @@
-/* Styles/ReportGeneration.css */
+/* ReportGeneration.css */
 
 .report-generation-container {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  font-weight: 300;
+  color: #343a40;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.error {
+  color: #dc3545;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.success {
+  color: #28a745;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.report-data {
+  margin-top: 20px;
+}
+
+.user-info, .bookings {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.user-info p, .booking-item p {
+  margin: 8px 0;
+  font-size: 1rem;
+}
+
+.user-info p strong, .booking-item p strong {
+  font-weight: 600;
+}
+
+.booking-item {
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background-color: #fafafa;
+}
+
+.booking-item p {
+  margin: 5px 0;
+}
+
+button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .report-generation-container {
+    padding: 15px;
   }
-  
-  h2 {
-    text-align: center;
-    color: #333;
-  }
-  
-  .user-info, .bookings {
-    margin-bottom: 20px;
-  }
-  
+
   .user-info p, .booking-item p {
-    margin: 5px 0;
-  }
-  
-  .booking-item {
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #fff;
-  }
-  
-  .booking-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
+    font-size: 0.9rem;
   }
   
   button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
+    font-size: 0.9rem;
   }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  .error {
-    color: #ff0000;
-    text-align: center;
-  }
-  
-  .success {
-    color: #28a745;
-    text-align: center;
-  }
-  
+}

@@ -65,9 +65,10 @@ const BookingForm = () => {
 
     const user_id = localStorage.getItem('user_id');
     if (!user_id) {
-      setError('User not logged in. Please log in to proceed with booking.');
+      setError('User not logged in. Please log in to proceed.');
       return;
     }
+  
 
     const formData = {
       fromDestination,

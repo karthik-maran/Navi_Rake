@@ -154,19 +154,20 @@ app.get('/api/rake-types', async (req, res) => {
 
 // Route to handle booking submissions
 app.post('/api/bookings', async (req, res) => {
-  const { fromDestination, toDestination, coalQuantity, numberOfRakes, selectedRakeType, deliveryDate,user_id } = req.body;
+  const { fromDestination, toDestination, coalQuantity, numberOfRakes, selectedRakeType, deliveryDate, user_id, fromSidingId, toSidingId } = req.body;
 
 
 
   const newBooking = new Booking({
-
     fromDestination,
     toDestination,
     coalQuantity,
     numberOfRakes,
     selectedRakeType,
     deliveryDate,
-    user_id
+    user_id,
+    fromSidingId,  // Store fromSidingId for the starting siding
+    toSidingId     // Store toSidingId for the destination siding
   });
  
   try {
@@ -306,4 +307,31 @@ app.get('/api/bookings', async (req, res) => {
 
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
+});
+
+//requesting  fromsid latitude/longitutde tosid latitude/longitude
+app.get('/api/bookings-with-sidings', async (req, res) => {
+  try {
+    // Fetch bookings and populate both fromSidingId and toSidingId
+    const bookings = await Booking.find()
+      .populate('fromSidingId')
+      .populate('toSidingId');
+    
+    res.json(bookings.map(booking => ({
+      fromSiding: {
+        name: booking.fromSidingId?.name,
+        lat: booking.fromSidingId?.position?.lat,
+        lng: booking.fromSidingId?.position?.lng,
+        production: booking.fromSidingId?.production
+      },
+      toSiding: {
+        name: booking.toSidingId?.name,
+        lat: booking.toSidingId?.position?.lat,
+        lng: booking.toSidingId?.position?.lng,
+        production: booking.toSidingId?.production
+      }
+    })));
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching booking and siding data', error });
+  }
 });

@@ -1,5 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 import '../Styles/ReportGeneration.css';
+
+
+const ReportPage = styled.div`
+  background-image: url('https://te.wikipedia.org/wiki/%E0%B0%9A%E0%B1%87%E0%B0%AC%E0%B1%8D%E0%B0%B0%E0%B1%8B%E0%B0%B2%E0%B1%81_%E0%B0%B0%E0%B1%88%E0%B0%B2%E0%B1%8D%E0%B0%B5%E0%B1%87_%E0%B0%B8%E0%B1%8D%E0%B0%9F%E0%B1%87%E0%B0%B7%E0%B0%A8%E0%B1%81#/media/%E0%B0%A6%E0%B0%B8%E0%B1%8D%E0%B0%A4%E0%B1%8D%E0%B0%B0%E0%B0%82:Freight_train_in_Chebrole_railway_station.jpg'); /* Path to your background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+`;
+
 
 const ReportGeneration = () => {
   const [data, setData] = useState({ users: [], bookings: [] });
@@ -57,6 +71,7 @@ const ReportGeneration = () => {
   };
 
   return (
+    
     <div className="report-generation-container">
       <h2>Report Generation</h2>
       {error && <p className="error">{error}</p>}
@@ -91,6 +106,7 @@ const ReportGeneration = () => {
       </div>
       <button onClick={handleOrderRake}>Order Rake</button>
     </div>
+   
   );
 };
 

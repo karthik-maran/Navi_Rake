@@ -56,4 +56,5 @@ const RakeCardsPage = () => {
   );
 };
 
+
 export default RakeCardsPage;

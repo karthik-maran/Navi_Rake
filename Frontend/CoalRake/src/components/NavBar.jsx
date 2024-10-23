@@ -45,7 +45,10 @@ const NavBar = () => {
 
   // Logout functionality
   const handleLogout = () => {
-    localStorage.removeItem('username'); // Clear localStorage
+    localStorage.removeItem('user_id');
+    localStorage.removeItem('email');
+    localStorage.removeItem('password'); 
+    localStorage.removeItem('username');   // Clear localStorage
     setUsername(null); // Update username state
     setDropdownOpen(false); // Close dropdown after logout
     // Optionally, redirect to the login page or homepage

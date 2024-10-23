@@ -17,7 +17,7 @@ const VerticalProgressBar = () => {
         setStations(response.data);
         
         // Mock progress value (set this dynamically in real app)
-        setProgress(80); // For example, 80% progress
+        setProgress(50); // For example, 80% progress
       } catch (error) {
         console.error("Error fetching stations:", error);
       }
@@ -27,7 +27,7 @@ const VerticalProgressBar = () => {
   }, []);
 
   // Determine the number of steps and current step based on progress
-  const steps = 4; // Total number of steps
+  const steps = 5; // Total number of steps
   const currentStep = Math.floor((progress / 100) * steps);
 
   return (

@@ -1,14 +1,16 @@
 const mongoose = require('mongoose');
-
-const bookingSchema = new mongoose.Schema({
-  user_id: { type: String, required: true },
-  fromDestination: { type: String, required: true },
-  toDestination: { type: String, required: true },
-  coalQuantity: { type: Number, required: true },
-  numberOfRakes: { type: Number, required: true },
-  selectedRakeType: { type: String, required: true },
-  deliveryDate: { type: Date, required: true },
+const BookingSchema = new mongoose.Schema({
+  fromDestination: String,
+  toDestination: String,
+  coalQuantity: Number,
+  numberOfRakes: Number,
+  selectedRakeType: String,
+  deliveryDate: Date,
+  user_id: String,
+  fromSidingId: { type: mongoose.Schema.Types.ObjectId, ref: 'Siding' }, // Reference for fromDestination
+  toSidingId: { type: mongoose.Schema.Types.ObjectId, ref: 'Siding' }   // Reference for toDestination
 });
 
-const Booking = mongoose.model('Booking', bookingSchema);
+const Booking = mongoose.model('Booking', BookingSchema);
+
 module.exports = Booking;

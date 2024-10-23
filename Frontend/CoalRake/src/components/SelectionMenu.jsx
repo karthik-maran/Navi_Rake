@@ -16,7 +16,7 @@ const features = [
   },
   {
     title: "Scheduling",
-    description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    description: "monitoring your coal logistics",
     imageSrc: "/card3.png", // Replace with the path to your image
     link: "/scheduling" // Specify the route you want to navigate to
   }
