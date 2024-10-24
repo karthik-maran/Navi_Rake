@@ -16,7 +16,6 @@
     width: 100%; 
     background-color:rgb(0, 0, 0);/* Ensure it takes full width */
   }
-  
   /* Navbar content layout */
   .navbar-content {
     margin: 0 10px;
@@ -26,6 +25,11 @@
     font-weight: 600;
     font-size: 1.25rem;
     padding: 2rem 0;
+  }
+  .navbar-title h1{
+    color: #d0420e;
+    padding-left: 10px;
+    font-size: 25px;
   }
   
   /* Navbar links hidden on mobile */

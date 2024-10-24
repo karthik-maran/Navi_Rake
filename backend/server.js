@@ -154,7 +154,7 @@ app.get('/api/rake-types', async (req, res) => {
 
 // Route to handle booking submissions
 app.post('/api/bookings', async (req, res) => {
-  const { fromDestination, toDestination, coalQuantity, numberOfRakes, selectedRakeType, deliveryDate, user_id, fromSidingId, toSidingId } = req.body;
+  const { fromDestination, toDestination, coalQuantity, numberOfRakes, selectedRakeType, deliveryDate, user_id } = req.body;
 
 
 
@@ -165,9 +165,8 @@ app.post('/api/bookings', async (req, res) => {
     numberOfRakes,
     selectedRakeType,
     deliveryDate,
-    user_id,
-    fromSidingId,  // Store fromSidingId for the starting siding
-    toSidingId     // Store toSidingId for the destination siding
+    user_id
+       // Store toSidingId for the destination siding
   });
  
   try {

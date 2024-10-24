@@ -3,9 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import '../Styles/bookingform.css';
 import styled from 'styled-components';
 
-
 const BookPage = styled.div`
-  background-image: url('https://www.maritimegateway.com/wp-content/uploads/2016/10/Coal_Exports.jpg'); /* Path to your background image */
+  background-image: url('https://www.maritimegateway.com/wp-content/uploads/2016/10/Coal_Exports.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -44,7 +43,6 @@ const BookingForm = () => {
       try {
         const response = await fetch('http://localhost:5000/api/rake-types');
         const data = await response.json();
-        console.log(data)
         setRakeTypes(data);
       } catch (error) {
         setError('Failed to fetch rake types.');
@@ -55,11 +53,32 @@ const BookingForm = () => {
     fetchRakeTypes();
   }, []);
 
+  const isFutureDate = (date) => {
+    const today = new Date();
+    const selectedDate = new Date(date);
+    return selectedDate >= today;
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    if (!fromDestination || !toDestination || !coalQuantity || !numberOfRakes || !selectedRakeType || !deliveryDate) {
+      setError('All fields must be filled out.');
+      return;
+    }
+
     if (parseFloat(coalQuantity) <= 15) {
       setError('Coal quantity must be greater than 15.');
+      return;
+    }
+
+    if (parseInt(numberOfRakes) <= 0) {
+      setError('Number of rakes must be greater than 0.');
+      return;
+    }
+
+    if (!isFutureDate(deliveryDate)) {
+      setError('Delivery date must be today or a future date.');
       return;
     }
 
@@ -68,7 +87,6 @@ const BookingForm = () => {
       setError('User not logged in. Please log in to proceed.');
       return;
     }
-  
 
     const formData = {
       fromDestination,
@@ -101,89 +119,89 @@ const BookingForm = () => {
 
   return (
     <BookPage>
-    <div className="booking-form-container">
-      <h2>Booking Form</h2>
-      {error && <p className="error">{error}</p>}
-      {success && <p className="success">{success}</p>}
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="fromDestination">From Destination:</label>
-          <select
-            id="fromDestination"
-            value={fromDestination}
-            onChange={(e) => setFromDestination(e.target.value)}
-            required
-          >
-            <option value="">Select From</option>
-            {destinations.map((dest, index) => (
-              <option key={index} value={dest.name}>{dest.name}</option>
-            ))}
-          </select>
-        </div>
-        <div className="form-group">
-          <label htmlFor="toDestination">To Destination:</label>
-          <select
-            id="toDestination"
-            value={toDestination}
-            onChange={(e) => setToDestination(e.target.value)}
-            required
-          >
-            <option value="">Select To</option>
-            {destinations.map((dest, index) => (
-              <option key={index} value={dest.name}>{dest.name}</option>
-            ))}
-          </select>
-        </div>
-        <div className="form-group">
-          <label htmlFor="coalQuantity">Coal Quantity:</label>
-          <input
-            type="number"
-            id="coalQuantity"
-            value={coalQuantity}
-            onChange={(e) => setCoalQuantity(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="numberOfRakes">Number of Rakes Needed:</label>
-          <input
-            type="number"
-            id="numberOfRakes"
-            value={numberOfRakes}
-            onChange={(e) => setNumberOfRakes(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="deliveryDate">Delivery Date:</label>
-          <input
-            type="date"
-            id="deliveryDate"
-            value={deliveryDate}
-            onChange={(e) => setDeliveryDate(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="rakeType">Rake Type:</label>
-          <select
-            id="rakeType"
-            value={selectedRakeType}
-            onChange={(e) => setSelectedRakeType(e.target.value)}
-            required
-          >
-            <option value="">Select Rake Type</option>
-            {rakeTypes.map((rake) => (
-              <option key={rake._id} value={rake.type}>
-                {rake.description}
-              </option>
-            ))}
-          </select>
-        </div>
-        <button type="submit">Submit Booking</button>
-      </form>
-    </div>
-  </BookPage>
+      <div className="booking-form-container">
+        <h2>Booking Form</h2>
+        {error && <p className="error">{error}</p>}
+        {success && <p className="success">{success}</p>}
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="fromDestination">From Destination:</label>
+            <select
+              id="fromDestination"
+              value={fromDestination}
+              onChange={(e) => setFromDestination(e.target.value)}
+              required
+            >
+              <option value="">Select From</option>
+              {destinations.map((dest, index) => (
+                <option key={index} value={dest.name}>{dest.name}</option>
+              ))}
+            </select>
+          </div>
+          <div className="form-group">
+            <label htmlFor="toDestination">To Destination:</label>
+            <select
+              id="toDestination"
+              value={toDestination}
+              onChange={(e) => setToDestination(e.target.value)}
+              required
+            >
+              <option value="">Select To</option>
+              {destinations.map((dest, index) => (
+                <option key={index} value={dest.name}>{dest.name}</option>
+              ))}
+            </select>
+          </div>
+          <div className="form-group">
+            <label htmlFor="coalQuantity">Coal Quantity:</label>
+            <input
+              type="number"
+              id="coalQuantity"
+              value={coalQuantity}
+              onChange={(e) => setCoalQuantity(e.target.value)}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="numberOfRakes">Number of Rakes Needed:</label>
+            <input
+              type="number"
+              id="numberOfRakes"
+              value={numberOfRakes}
+              onChange={(e) => setNumberOfRakes(e.target.value)}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="deliveryDate">Delivery Date:</label>
+            <input
+              type="date"
+              id="deliveryDate"
+              value={deliveryDate}
+              onChange={(e) => setDeliveryDate(e.target.value)}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="rakeType">Rake Type:</label>
+            <select
+              id="rakeType"
+              value={selectedRakeType}
+              onChange={(e) => setSelectedRakeType(e.target.value)}
+              required
+            >
+              <option value="">Select Rake Type</option>
+              {rakeTypes.map((rake) => (
+                <option key={rake._id} value={rake.type}>
+                  {rake.description}
+                </option>
+              ))}
+            </select>
+          </div>
+          <button type="submit">Submit Booking</button>
+        </form>
+      </div>
+    </BookPage>
   );
 };
 

@@ -27,6 +27,8 @@ const SidingLocator = () => {
   };
 
   return (
+
+  
     
     <div style={{ display: 'flex' ,gap:'10px',flexDirection: 'row', height: '650px'}}>
       {/* Siding Map component */}

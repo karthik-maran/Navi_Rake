@@ -31,7 +31,9 @@ const VerticalProgressBar = () => {
   const currentStep = Math.floor((progress / 100) * steps);
 
   return (
+    <div className="head-text"> <h4></h4>
     <div className="progress-container">
+   
       <h3 className="station-label">{stations.start}</h3>
       <div className="progress-bar">
         {[...Array(steps)].map((_, index) => (
@@ -44,6 +46,7 @@ const VerticalProgressBar = () => {
         ))}
       </div>
       <h3 className="station-label">{stations.end}</h3>
+    </div>
     </div>
   );
 };

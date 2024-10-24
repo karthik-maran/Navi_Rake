@@ -38,6 +38,7 @@ const slideshow = ({ images }) => {
       </div>
       <div className="slideshow-text">
         <h6> WELCOME TO RAKE NAVIGATION</h6>
+        <h5>Transforming Supply Chain with Technology and Innovations..</h5>
       </div>
     </div>
     

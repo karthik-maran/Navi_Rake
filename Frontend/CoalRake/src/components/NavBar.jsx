@@ -56,8 +56,13 @@ const NavBar = () => {
 
   return (
     <div className="navbar-container">
+      
       <div className="navbar-content">
+      <div className="navbar-title"><h1>Rake Navigation</h1></div>
+
         <div className="navbar-left"></div>
+  
+
         <div className="navbar-links">
           <a className="navbar-link" href="/Home">Home</a>
           <a className="navbar-link" href="/about">About</a>

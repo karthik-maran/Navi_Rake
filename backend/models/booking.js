@@ -7,8 +7,12 @@ const BookingSchema = new mongoose.Schema({
   selectedRakeType: String,
   deliveryDate: Date,
   user_id: String,
-  fromSidingId: { type: mongoose.Schema.Types.ObjectId, ref: 'Siding' }, // Reference for fromDestination
-  toSidingId: { type: mongoose.Schema.Types.ObjectId, ref: 'Siding' }   // Reference for toDestination
+  fromSidingId: { type: mongoose.Schema.Types.ObjectId, ref: 'sidings' }, // Reference for fromSiding
+  toSidingId: { type: mongoose.Schema.Types.ObjectId, ref: 'Sidings' },   // Reference for toSiding
+  fromLat: Number,  // Store fromSiding latitude
+  fromLng: Number,  // Store fromSiding longitude
+  toLat: Number,    // Store toSiding latitude
+  toLng: Number     // Store toSiding longitude   // Reference for toDestination
 });
 
 const Booking = mongoose.model('Booking', BookingSchema);
