@@ -68,6 +68,7 @@ const ReportGeneration = () => {
     } catch (error) {
       setError('Failed to order rake');
     }
+
   };
 
   return (

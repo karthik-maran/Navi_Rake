@@ -47,7 +47,7 @@ const RakeCardsPage = () => {
               <h3>{rake.type}</h3>
               <p>{rake.description}</p>
               <p>Capacity: {rake.capacity}</p>
-              <p>Price: ${rake.price}</p>
+              <p>Price:Rs{rake.price}</p>
             </div>
           </div>
         ))}
